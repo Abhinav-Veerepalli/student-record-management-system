@@ -1,0 +1,41 @@
+<%- include('../partials/login_header') %>
+<% if (typeof message !== 'undefined' && message) { %>
+  <script>
+    window.alert("<%= message %>");
+  </script>
+<% } %>
+<div class="register-page" style="margin-top: 50px; margin-bottom: 50px;">
+    <div style="text-align:center;margin-bottom:8px;font-size:2.4rem;">📚</div>
+    <h1 class="login-title">Teacher Registration</h1>
+    <p class="login-subtitle">Register to manage courses</p>
+
+    <div class="register-card" style="max-width: 500px;">
+        <form class="login-form" action="/register/teacher" method="POST">
+            
+            <div class="form-field">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-field">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <div class="form-field">
+                <label for="department">Department</label>
+                <input type="text" id="department" name="department" required>
+            </div>
+
+            <button type="submit" class="login-button">
+                Register Teacher
+            </button>
+        </form>
+    </div>
+</div>
+<%- include('../partials/footer') %>

@@ -1,0 +1,47 @@
+<%- include('../partials/login_header') %>
+
+<div class="register-page">
+
+    <div style="text-align:center;margin-bottom:8px;font-size:2.4rem;">✍️</div>
+    <h1 class="login-title">Create Account</h1>
+    <p class="login-subtitle">Register a new admin or faculty account</p>
+
+    <div class="register-card">
+        <form class="login-form" action="/register" method="POST">
+
+            <div class="form-field">
+                <label for="reg-email">Email Address</label>
+                <input
+                    type="email"
+                    id="reg-email"
+                    name="username"
+                    placeholder="you@srms.edu"
+                    required
+                >
+            </div>
+
+            <div class="form-field">
+                <label for="reg-password">Password</label>
+                <input
+                    type="password"
+                    id="reg-password"
+                    name="password"
+                    placeholder="Create a strong password"
+                    required
+                >
+            </div>
+
+            <button type="submit" class="login-button">
+                Register →
+            </button>
+
+        </form>
+    </div>
+
+    <p style="margin-top:20px;font-size:.82rem;color:var(--text-soft);">
+        Already have an account? <a href="/role" style="color:var(--blue-500);font-weight:600;">Sign In</a>
+    </p>
+
+</div>
+
+<%- include('../partials/footer') %>

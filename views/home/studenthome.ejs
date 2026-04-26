@@ -1,0 +1,66 @@
+<%- include ("../partials/studentHeader.ejs") %>
+
+        <div class="profile-container">
+            <div class="profile-card">
+
+                <div class="profile-banner">
+                    <div class="profile-avatar">🎓</div>
+                </div>
+
+                <div class="profile-body">
+                    <h2 class="profile-name"><%= student.name %></h2>
+                    <p class="profile-id"><strong>Student ID:</strong> <%= student.id %></p>
+
+                    <div style="display:flex; justify-content:center; margin-bottom: 2rem;">
+                         <a href="/enrollments/enroll" class="sbtbtn" style="text-align: center; width: 100%; max-width: 300px; padding: 12px; font-size: 1rem; box-shadow: var(--shadow-glow);">🎯 Enroll in Courses</a>
+                    </div>
+
+                    <div class="profile-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">📞 Phone</div>
+                            <div class="stat-value"><%= student.phone %></div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">🎂 Age</div>
+                            <div class="stat-value"><%= student.age %> yrs</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">🏫 Branch</div>
+                            <div class="stat-value"><%= student.branch %></div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">📅 Year</div>
+                            <div class="stat-value"><%= student.year %> Year</div>
+                        </div>
+                        <div class="stat-item cgpa-stat">
+                            <div>
+                                <div class="stat-label">⭐ CGPA</div>
+                                <div style="font-size:.8rem;color:var(--text-soft);">Current Academic Score</div>
+                            </div>
+                            <div class="stat-value"><%= student.cgpa %> / 10</div>
+                        </div>
+                    </div>
+
+                    <!-- Enrolled Courses Section -->
+                    <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px;">
+                        <h3 style="margin:0 0 1rem 0; font-size:1rem; color:var(--text-soft); text-transform:uppercase; letter-spacing:0.08em;">📘 Enrolled Courses</h3>
+                        <% if (student.courses) { %>
+                            <div style="display:flex; flex-wrap:wrap; gap:10px;">
+                                <% student.courses.split(', ').forEach(function(course){ %>
+                                    <span style="background:var(--primary-accent); color:#fff; padding:6px 16px; border-radius:999px; font-size:0.85rem; font-weight:600;"><%= course %></span>
+                                <% }); %>
+                            </div>
+                        <% } else { %>
+                            <div style="text-align:center; padding: 1rem 0; color:var(--text-soft);">
+                                <div style="font-size:2rem; margin-bottom:8px;">📭</div>
+                                <p style="margin:0; font-size:0.9rem;">No courses enrolled yet. <a href="/enrollments/enroll" style="color:var(--primary-accent); font-weight:600;">Enroll now &rarr;</a></p>
+                            </div>
+                        <% } %>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+<%- include ("../partials/footer.ejs") %>

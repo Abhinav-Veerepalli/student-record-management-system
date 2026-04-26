@@ -1,0 +1,23 @@
+<%- include ("../partials/header.ejs") %>
+<div class="page-title-bar">
+    <div class="page-title-icon">📘</div>
+    <div>
+        <h2>Add New Course</h2>
+        <p>Register a new course under your department</p>
+    </div>
+</div>
+
+<div class="form_container">
+    <div class="add_student_form" style="max-width: 500px">
+        <form action="/courses/addCourse" method="POST">
+            
+            <div class="form-group">
+                <label for="course_name">Course Name</label>
+                <input type="text" id="course_name" name="course_name" placeholder="e.g. Intro to Computer Science" required>
+            </div>
+
+            <button type="submit" class="sbtbtn" id="submitBtn">✅ Add Course</button>
+        </form>
+    </div>
+</div>
+<%- include ("../partials/footer.ejs") %>

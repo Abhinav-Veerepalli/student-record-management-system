@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRMS — Student Report Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="full-length">
+            <nav class="nav">
+                <div class="naming">
+                    <img src="/logo.png" alt="SRMS Logo">
+                    <h3 id="high_name">STUDENT REPORT MANAGEMENT SYSTEM</h3>
+                </div>
+                <div class="navigations">
+                    <ul>
+                        <% if (user?.role === "admin") { %>
+                            <li><a href="/adminHome">🏠 Home</a></li>
+                            <li><a href="/students/addStudent">➕ Add Student</a></li>
+                            <li><a href="/students/searchStudent">🔍 Search</a></li>
+                            <li><a href="/students/deleteStudent">🗑️ Delete</a></li>
+                            <li><a href="/students/displayStudents">📋 All Students</a></li>
+                            <li><a href="/courses/listCourses">📘 Courses</a></li>
+                            <li><a href="/manage/teachers">👥 Manage Teachers</a></li>
+                        <% } %>
+
+                        <% if (user?.role === "teacher") { %>
+                            <li><a href="/teacherhome">🏠 Home</a></li>
+                            <li><a href="/students/addStudent">➕ Add Student</a></li>
+                            <li><a href="/students/searchStudent">🔍 Search</a></li>
+                            <li><a href="/students/displayStudents">📋 Students</a></li>
+                            <li><a href="/courses/listCourses">📘 Courses</a></li>
+                        <% } %>
+
+                        <li><a href="/logout">Logout</a></li>
+                    </ul>
+                </div>
+            </nav>

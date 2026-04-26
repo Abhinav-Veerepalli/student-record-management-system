@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRMS — Select Your Role</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="full-length">
+
+            <nav class="nav">
+                <div class="naming">
+                    <img src="/logo.png" alt="SRMS Logo">
+                    <h3 id="high_name">STUDENT REPORT MANAGEMENT SYSTEM</h3>
+                </div>
+            </nav>
+
+            <div class="hero">
+                <div class="main">
+                    <h1>Select Your Role</h1>
+                    <p style="color:var(--text-soft);font-size:.95rem;margin-top:-8px;">Choose how you want to access the system</p>
+
+                    <div class="role-grid">
+
+                        <div class="role-card" id="admin">
+                            <div class="role-icon">⚙️</div>
+                            <h2>Admin</h2>
+                            <p>Full system access & management</p>
+                        </div>
+
+                        <div class="role-card" id="student">
+                            <div class="role-icon">🎓</div>
+                            <h2>Student</h2>
+                            <p>View your academic profile</p>
+                        </div>
+
+                        <div class="role-card" id="teacher">
+                            <div class="role-icon">📚</div>
+                            <h2>Teacher</h2>
+                            <p>Manage & track student records</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- end full-length -->
+        <footer>
+            <h4 id="footer">Made with ❤️ by the SRMS Team</h4>
+            <p id="cpyrht">&copy; Owned by SRMAP University</p>
+        </footer>
+    </div><!-- end wrapper -->
+
+    <script>
+        document.getElementById("admin").onclick = function() {
+            location.href = "/adminLogin";
+        };
+        document.getElementById("student").onclick = function() {
+            location.href = "/studentLogin";
+        };
+        document.getElementById("teacher").onclick = function() {
+            location.href = "/teacherLogin";
+        };
+    </script>
+</body>
+</html>

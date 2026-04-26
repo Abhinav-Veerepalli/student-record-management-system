@@ -1,0 +1,58 @@
+<%- include ("../partials/header.ejs") %>
+
+<div class="page-title-bar">
+    <div class="page-title-icon">✏️</div>
+    <div>
+        <h2>Edit Student Record</h2>
+        <p>Modify existing academic details for <%= student.name %></p>
+    </div>
+</div>
+
+<div class="form_container">
+    <div class="add_student_form">
+
+        <div class="form-header">
+            <h2>Edit Profile</h2>
+            <p>Update any changed parameters</p>
+        </div>
+
+        <form action="/students/editStudent/<%= student.id %>" method="POST">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+
+            <div class="form-group">
+                <label for="studentName">Full Name</label>
+                <input type="text" id="studentName" name="name" value="<%= student.name %>" required>
+            </div>
+
+            <div class="form-group">
+                <label for="studentAge">Age</label>
+                <input type="number" id="studentAge" name="age" value="<%= student.age %>" required>
+            </div>
+
+            <div class="form-group">
+                <label for="branch">Branch / Department</label>
+                <input type="text" id="branch" name="branch" value="<%= student.branch %>" required>
+            </div>
+
+            <div class="form-group">
+                <label for="year">Current Year</label>
+                <input type="number" id="year" name="year" value="<%= student.year %>" required>
+            </div>
+
+            <div class="form-group">
+                <label for="studentPhone">Phone Number</label>
+                <input type="text" id="studentPhone" name="phone" value="<%= student.phone %>" required>
+            </div>
+
+            <div class="form-group">
+                <label for="CGPA">CGPA</label>
+                <input type="number" step="0.01" id="CGPA" name="cgpa" value="<%= student.cgpa %>" required>
+            </div>
+
+            <button type="submit" class="sbtbtn" id="submitBtn">Updates Data 💾</button>
+        </form>
+
+    </div>
+</div>
+
+<%- include ("../partials/footer.ejs") %>

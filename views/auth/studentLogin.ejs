@@ -1,0 +1,54 @@
+<%- include('../partials/login_header') %>
+<% if (message) { %>
+  <script>
+    window.alert("<%= message %>");
+  </script>
+<% } %>
+
+<div class="login-page">
+
+    <div style="text-align:center;margin-bottom:8px;font-size:2.4rem;">🎓</div>
+    <h1 class="login-title">Student Login</h1>
+    <p class="login-subtitle">Access your academic profile and records</p>
+
+    <div class="login-card">
+        <form class="login-form" action="/studentLogin" method="POST">
+
+            <div class="form-field">
+                <label for="email">Student Phone Number</label>
+                <input
+                    type="text"
+                    id="email"
+                    name="email"
+                    placeholder="e.g., 9876543210"
+                    pattern="[0-9]{10}"
+                    title="Please enter a 10-digit phone number"
+                    required
+                >
+            </div>
+
+            <div class="form-field">
+                <label for="password">Student ID (Password)</label>
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="e.g., AP21CSE001"
+                    required
+                >
+            </div>
+
+            <button type="submit" class="login-button">
+                Sign In →
+            </button>
+
+        </form>
+    </div>
+
+    <p style="margin-top:20px;font-size:.82rem;color:var(--text-soft);">
+        Not a Student? <a href="/role" style="color:var(--blue-500);font-weight:600;">Go Back</a>
+    </p>
+
+</div>
+
+<%- include('../partials/footer') %>

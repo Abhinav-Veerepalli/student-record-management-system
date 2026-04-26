@@ -1,0 +1,52 @@
+<%- include ("../partials/header.ejs") %>
+   <% if(message){ %>
+     <script>
+            alert("<%= message%>");
+    </script>
+    <%}%>
+
+        <div class="page-title-bar">
+            <div class="page-title-icon">🗑️</div>
+            <div>
+                <h2>Delete Student</h2>
+                <p>Search by Student ID, review the record, then confirm deletion</p>
+            </div>
+        </div>
+
+<div class="search_container">
+
+    <div class="search_box">
+        <h3>🗑️ Remove a Student</h3>
+        <p>Enter the Student ID to look up and delete</p>
+        <form action="/students/searchStudent" method="POST">
+            <input class="search_item" type="text" name="search_id" placeholder="e.g., AP21CSE001" required>
+            <input type="hidden" name="identifier" value="true">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <button id="search" type="submit">Search →</button>
+        </form>
+    </div>
+
+    <div id="student_details">
+        <%if(student){%>
+            <div class="student_card">
+                <div class="id_name">
+                    <h3 id="name"><%= student.name.toUpperCase() %></h3>
+                    <p id="id"><strong>ID:</strong> <%= student.id.toUpperCase() %></p>
+                </div>
+                <p id="age"><strong>🎂 Age:</strong> <%= student.age %> years</p>
+                <p id="phone"><strong>📞 Phone:</strong> <%= student.phone %></p>
+                <div class="phone_year">
+                    <p id="branch"><strong>Branch</strong><br><%= student.branch %></p>
+                    <p id="year"><strong>Year</strong><br><%= student.year %></p>
+                </div>
+                <form action="/deleteStudent/<%= student.id %>" method="POST" onsubmit="return confirm('Are you sure you want to permanently delete <%= student.name %>?')">
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                    <button type="submit" class="delete-btn">🗑️ Delete Student Permanently</button>
+                </form>
+            </div>
+        <% }%>
+    </div>
+
+</div>
+
+<%- include ("../partials/footer.ejs") %>

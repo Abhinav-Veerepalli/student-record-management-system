@@ -1,0 +1,45 @@
+<%- include ("../partials/header.ejs") %>
+
+<div class="div_form">
+    <div class="div_img">
+        <img src="/appimg.png" alt="Edit Teacher" height="100%" width="100%" style="object-fit: cover;">
+    </div>
+    
+    <div class="div_form_details">
+        <form action="/manage/teachers/edit/<%= teacher.teacher_id %>" method="POST">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            
+            <div class="form_header">
+                <h2>Edit Teacher Profile</h2>
+                <p>Modify basic details and department configuration.</p>
+            </div>
+
+            <div class="inp">
+                <p>Teacher Name</p>
+                <input type="text" name="name" value="<%= teacher.name %>" required>
+            </div>
+
+            <div class="inp">
+                <p>Email Address</p>
+                <input type="email" name="email" value="<%= teacher.email %>" required>
+            </div>
+
+            <div class="inp">
+                <p>Department</p>
+                <select name="department" required>
+                    <option value="" disabled>Select Department</option>
+                    <option value="CSE" <%= teacher.department === 'CSE' ? 'selected' : '' %>>Computer Science (CSE)</option>
+                    <option value="ECE" <%= teacher.department === 'ECE' ? 'selected' : '' %>>Electronics (ECE)</option>
+                    <option value="EEE" <%= teacher.department === 'EEE' ? 'selected' : '' %>>Electrical (EEE)</option>
+                    <option value="MECH" <%= teacher.department === 'MECH' ? 'selected' : '' %>>Mechanical</option>
+                    <option value="CIVIL" <%= teacher.department === 'CIVIL' ? 'selected' : '' %>>Civil Engineering</option>
+                    <option value="IT" <%= teacher.department === 'IT' ? 'selected' : '' %>>Information Tech (IT)</option>
+                </select>
+            </div>
+
+            <button type="submit" class="sbtbtn">Update Teacher</button>
+        </form>
+    </div>
+</div>
+
+<%- include ("../partials/footer.ejs") %>

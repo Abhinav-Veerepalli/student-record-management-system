@@ -1,0 +1,34 @@
+<%- include ("../partials/header.ejs") %>
+
+<div class="page-title-bar">
+    <div class="page-title-icon">👥</div>
+    <div>
+        <h2>Manage Teachers</h2>
+        <p>Complete list of system teachers — <%= teachers.length %> record<%= teachers.length !== 1 ? 's' : '' %> found</p>
+    </div>
+</div>
+
+<% if (message) { %>
+    <div style="background-color: #d4edda; color: #155724; padding: 10px; margin: 15px auto; max-width: 1000px; border-radius: 6px; text-align: center;">
+        <%= message %>
+    </div>
+<% } %>
+
+<div class="students_container" style="display:flex; flex-wrap:wrap; justify-content:center;">
+    <% teachers.forEach((teacher, i) => { %>
+        <div class="student_card" style="--i:<%= i %>">
+            <h3 class="name"><%= teacher.name %></h3>
+            
+            <p><strong>Department:</strong> <%= teacher.department || 'Not Assigned' %></p>
+            <p><strong>Email:</strong> <%= teacher.email %></p>
+            
+            <% if (user && user.role === "admin") { %>
+                <form action="/manage/teachers/edit/<%= teacher.teacher_id %>" method="GET" style="margin-top: 15px;">
+                    <button type="submit" class="sbtbtn" style="width: 100%; border: none; cursor: pointer; text-align: center;">✎ Edit Teacher</button>
+                </form>
+            <% } %>
+        </div>
+    <% }) %>
+</div>
+
+<%- include ("../partials/footer.ejs") %>

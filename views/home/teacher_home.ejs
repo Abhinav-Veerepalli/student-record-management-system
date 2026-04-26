@@ -1,0 +1,50 @@
+<%- include ("../partials/header.ejs") %>
+
+        <div class="hero">
+            <div class="main">
+                <h1>📚 Teacher Dashboard</h1>
+                <p style="color:var(--text-soft);font-size:.95rem;margin-top:-8px;">Manage and view your students' academic records</p>
+
+                <div class="dashboard-grid">
+
+                    <div class="dash-card" id="add_stud">
+                        <span class="dash-badge">Action</span>
+                        <div class="dash-icon">➕</div>
+                        <h2>Add Student</h2>
+                        <p>Enroll a new student with their complete profile</p>
+                    </div>
+
+                    <div class="dash-card" id="search_stud">
+                        <div class="dash-icon">🔍</div>
+                        <h2>Search Student</h2>
+                        <p>Find a student record instantly by their ID</p>
+                    </div>
+
+                    <div class="dash-card" id="display_stud">
+                        <div class="dash-icon">📋</div>
+                        <h2>Students Record</h2>
+                        <p>View all enrolled students and their academic data</p>
+                    </div>
+
+                    <div class="dash-card" onclick="location.href='/courses/listCourses'">
+                        <div class="dash-icon">📘</div>
+                        <h2>Manage Courses</h2>
+                        <p>Create and review your assigned teaching modules</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+<%- include ("../partials/footer.ejs") %>
+<script>
+    document.getElementById("add_stud").onclick = function() {
+        location.href = "/students/addStudent";
+    };
+    document.getElementById("search_stud").onclick = function() {
+        location.href = "/students/searchStudent";
+    };
+    document.getElementById("display_stud").onclick = function() {
+        location.href = "/students/displayStudents";
+    };
+</script>

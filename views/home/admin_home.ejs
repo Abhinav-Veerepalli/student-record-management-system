@@ -1,0 +1,59 @@
+<%- include ("../partials/header.ejs") %>
+
+        <div class="hero">
+            <div class="main">
+                <h1>⚙️ Admin Dashboard</h1>
+                <p style="color:var(--text-soft);font-size:.95rem;margin-top:-8px;">Manage student records and system data</p>
+
+                <div class="dashboard-grid">
+
+                    <div class="dash-card" onclick="location.href='/students/addStudent'">
+                        <span class="dash-badge">Quick Action</span>
+                        <div class="dash-icon">➕</div>
+                        <h2>Add Student</h2>
+                        <p>Register a new student with full academic details</p>
+                    </div>
+
+                    <div class="dash-card" onclick="location.href='/students/searchStudent'">
+                        <div class="dash-icon">🔍</div>
+                        <h2>Search Student</h2>
+                        <p>Look up any student record by their unique ID</p>
+                    </div>
+
+                    <div class="dash-card" onclick="location.href='/students/displayStudents'">
+                        <div class="dash-icon">📋</div>
+                        <h2>All Students</h2>
+                        <p>Browse the complete list of enrolled students</p>
+                    </div>
+
+                    <div class="dash-card" onclick="location.href='/students/deleteStudent'">
+                        <div class="dash-icon">🗑️</div>
+                        <h2>Remove Student</h2>
+                        <p>Search and permanently delete a student record</p>
+                    </div>
+
+                    <div class="dash-card" onclick="location.href='/courses/listCourses'">
+                        <div class="dash-icon">📘</div>
+                        <h2>System Courses</h2>
+                        <p>View the active courses assigned to all teachers</p>
+                    </div>
+
+                    <div class="dash-card" onclick="location.href='/manage/teachers'">
+                        <span class="dash-badge">New</span>
+                        <div class="dash-icon">👥</div>
+                        <h2>Manage Teachers</h2>
+                        <p>View, update, and manage teacher accounts</p>
+                    </div>
+
+                    <div class="dash-card" onclick="location.href='/manage/addTeacher'">
+                        <span class="dash-badge">Admin</span>
+                        <div class="dash-icon">👨‍🏫</div>
+                        <h2>Add Teacher</h2>
+                        <p>Register a new teacher and assign courses</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+<%- include ("../partials/footer.ejs") %>
