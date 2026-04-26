@@ -1,4 +1,4 @@
-# 📚 Student Record Management System (SRMS)
+#  Student Record Management System (SRMS)
 
 [![Node.js Version](https://img.shields.io/badge/Node.js-v18%2B-green)](https://nodejs.org/)
 [![MySQL](https://img.shields.io/badge/Database-MySQL-blue)](https://www.mysql.com/)
@@ -8,18 +8,18 @@ A professional, modular Student Record Management System designed to streamline 
 
 ---
 
-## 🌟 Key Features
+## Key Features
 
-- 🔐 **Secure Authentication**: Multi-role login system (Admin, Teacher, Student) using Passport.js and Bcrypt password hashing.
-- 👨‍🎓 **Student Management**: Full CRUD operations for student records, including registrations and profile updates.
-- 👩‍🏫 **Teacher Management**: Administrative tools to manage faculty records and course assignments.
-- 📖 **Course & Enrollment**: Comprehensive system for managing subjects and student enrollments.
-- 🏗️ **Modular Architecture**: Clean code structure with separate modules for high maintainability.
-- 🛡️ **Session Management**: Secure user sessions with persistent login states.
+- **Secure Authentication**: Multi-role login system (Admin, Teacher, Student) using Passport.js and Bcrypt password hashing.
+- **Student Management**: Full CRUD operations for student records, including registrations and profile updates.
+- **Teacher Management**: Administrative tools to manage faculty records and course assignments.
+- **Course & Enrollment**: Comprehensive system for managing subjects and student enrollments.
+- **Modular Architecture**: Clean code structure with separate modules for high maintainability.
+- **Session Management**: Secure user sessions with persistent login states.
 
 ---
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```text
 SRMS/
@@ -38,7 +38,7 @@ SRMS/
 
 ---
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 - **Backend**: [Node.js](https://nodejs.org/), [Express.js](https://expressjs.com/)
 - **Frontend**: [EJS](https://ejs.co/), [Vanilla CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
@@ -48,7 +48,7 @@ SRMS/
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -101,19 +101,10 @@ The application will be accessible at `http://localhost:3000`.
 
 ---
 
-## 🧑‍💻 Contributing Developers
-
-- **PATURU V N S GANESH CHARAN**
-- **KISHOR GUNITHI**
-- **DOGGA YASHWANTH**
-- **R.NITHIN**
-- **ANAND GOKUL KOTA**
-
----
 
 ## 📄 License
 
 This project is licensed under the **ISC License**.
 
 ---
-<p align="center">Made with ❤️ for Academic Excellence</p>
+
